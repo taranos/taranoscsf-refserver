@@ -23,6 +23,6 @@ scalaVersion := "2.11.8"
 
 //libraryDependencies ++= Seq( jdbc , anorm , cache , ws )
 
-unmanagedResourceDirectories in Test <+=  baseDirectory ( _ /"target/web/public/test" )
+unmanagedResourceDirectories in Test += baseDirectory.value / "target/web/public/test"
 
 lazy val `server2` = (project in file(".")).enablePlugins(PlayScala, LauncherJarPlugin)

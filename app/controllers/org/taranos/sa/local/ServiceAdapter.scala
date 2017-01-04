@@ -81,7 +81,7 @@ object ServiceAdapter
             message match
             {
                 case serviceResult: ServiceResult =>
-                    EncodeReplyString(serviceResult.serviceResult, "", 0)
+                    EncodeReplyString(serviceResult._serviceResult, "", 0)
 
                 case _ =>
                     EncodeReplyString(org.taranos.common.ServiceResult(), "", 0)
