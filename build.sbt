@@ -16,7 +16,6 @@
 //
 
 name := "taranos-refserver"
-
 version := "0.2"
 
 scalaVersion := "2.11.8"
@@ -25,4 +24,4 @@ scalaVersion := "2.11.8"
 
 unmanagedResourceDirectories in Test += baseDirectory.value / "target/web/public/test"
 
-lazy val `server2` = (project in file(".")).enablePlugins(PlayScala, LauncherJarPlugin)
+lazy val server2 = (project in file(".")).enablePlugins(PlayScala, LauncherJarPlugin)
