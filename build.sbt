@@ -24,4 +24,5 @@ scalaVersion := "2.11.8"
 
 unmanagedResourceDirectories in Test += baseDirectory.value / "target/web/public/test"
 
-lazy val server2 = (project in file(".")).enablePlugins(PlayScala, LauncherJarPlugin)
+lazy val refserver = (project in file(".")).enablePlugins(PlayScala, LauncherJarPlugin)
+
