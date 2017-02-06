@@ -34,7 +34,7 @@ object Controller
     {
         request =>
         {
-            val args = api.common.Controller.ExtractGetArgs(Seq(), request)
+            val args = api.common.Controller.ExtractDeleteArgs(Seq(), request, "dc")
             if (args.isEmpty)
                 scala.concurrent.Future(BadRequest)(scala.concurrent.ExecutionContext.Implicits.global)
             else
