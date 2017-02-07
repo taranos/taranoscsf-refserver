@@ -36,7 +36,7 @@ This will create an [_SBT Native Packager_](https://github.com/sbt/sbt-native-pa
 
 - Learn [_Taranos:CSF_ concepts](https://github.com/taranos/taranoscsf/wiki/Domain-Model-Concepts)
 
-- Take the Pseudo-API tutorial
+- Work with the [Pseudo-API tutorials](https://github.com/taranos/taranoscsf/wiki/PAPI-Tutorials)
 
 - Read FAQs
 
