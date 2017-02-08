@@ -154,7 +154,7 @@ assert(rsmpo['r']['smo']['t'])
 rsmpo = report_oscillator_patch(key=ksmpo, sections='cs')
 print(rsmpo)
 
-# Notice that the patch report contains a report for each of the five child signal output modulators.  Within their
+# Notice that the patch report now contains a report for each of the five child signal output modulators.  Within their
 # state propertysets ("s") there is a property that represents the modulators current signal value ("s").  As you can
 # see they are empty:
 assert(not rsmpo['rsmo']['l']['s']['s'])
@@ -183,12 +183,12 @@ assert(not rsmpo['rsmo']['t']['s']['s'])
 # How does one acquire the key of a signal port associated with a given emitter?  In addition to being assigned an
 # immutable key, as is the case with every over model element, signal ports are special in that they can also be
 # assigned a mutable key alias.  Given an alias, a prospective accessor can then call the signal port lookup service to
-# exchange it for the port's actual key.  Aliases allow a user to publish a revocable reference to a model element
-# to the world without having to reveal the element's assigned key.
+# exchange it for the port's actual key.  Aliases allow a user to publish a meaningful or guessable reference to a model
+# element instead of its key.
 #
-# In the case of an emitter, the signal port associated with the emitter's automatically assigned signal input modulator
-# is created with its alias set to the meta tag value of the emitter.  Thus, one only needs to know the value of the
-# emitter tag to lookup the signal port's key.
+# In the case of an emitter, the signal port associated with the emitter's automatically-assigned signal input modulator
+# is created with its alias set to the meta-tag value of the emitter.  Thus, one only needs to know the value of the
+# emitter's tag to lookup the signal port's key.
 
 # So to fetch the key of the default field emitter's signal port we do the following ...
 # First, determine the emitter's tag value from its meta propertyset:
@@ -412,17 +412,62 @@ assert(rw8 == rw6)
 
 # As you can see this can be quite a bit more convenient than the previously described method, but either can
 # be used as desired.  There are other macros for manipulating oscillators as well.  The list includes:
+# - set_loudness_ceiling
+# - set_loudness_floor
+# - set_loudness_poles
+# - set_period_poles
+# - set_pitch_ceiling
+# - set_pitch_floor
+# - set_pitch_poles
+# - set_shape_poles
+# - set_tone_poles
+# - set_waveset_id
+
+# We started this tutorial by fetching a report of the default field that included its references section.  We then
+# examined it's default field emitter -- the reference identified as "_fe" in the section, in more detail.  Let's
+# refer to that report once more.
+print(rf)
+
+# Notice that in addition to the default field reference there are a few others which are lists:
+assert(type(rf['r']['fe']) is list)
+assert(type(rf['r']['p']) is list)
+assert(type(rf['r']['s']) is list)
+# These refer to the child elements of the field which are, in order, field emitters, probes and subjects.
+
+# It should come as no surprise that the default field emitter reference we worked with earlier is duplicated in the
+# field emitter children list:
+assert(rf['r']['_fe'] == rf['r']['fe'][0])
+# We can also see that it is the only other field emitter in the list:
+assert(len(rf['r']['fe']) == 1)
+# This is the case because we have not explicitly created any others since we re-initialized the cell in the beginning.
+# The probes and subjects lists are empty for the same reason:
+assert(not rf['r']['p'])
+assert(not rf['r']['s'])
+# There is also a reference to an element named "t":
+print(rf['r']['t'])
+# This refers to the field's assigned signal trunk, and happens to be a peer of the field rather than a child of it.
+
+# Probes and subjects add a geometrical dimension to Taranos rendering and signal trunks encapsulate the hidden world
+# of Taranos signaling.  Both are topics we'll cover in detail in later tutorials.
+
+# One final point, currently [February 2017], there is no fixed limit to the number of field emitters that a field can
+# support.  As with other kinds of simulation applications the theoretical limit to entity counts is a function of many
+# factors including host architecture and physical capacities.  But there are practical considerations when it comes to
+# the size of reporting responses and the ability of clients, especially those on limited-capability devices, to handle
+# them.  Taranos uses a number of techniques to help manage the sizes of wavefield and configuration reporting responses
+# including report sectioning as we've seen and field geometry.
 #
-#   set_loudness_ceiling
-#   set_loudness_floor
-#   set_loudness_poles
-#   set_period_poles
-#   set_pitch_ceiling
-#   set_pitch_floor
-#   set_pitch_poles
-#   set_shape_poles
-#   set_tone_poles
-#   set_waveset_id
+# For example, the minimal field report of our default field is quite modest in size:
+print(report_field())
+# However we can easily request a broader set of report sections that explode the size of the report considerably:
+print(report_field(sections='arsgc'))
+# In this case we've requested additional information about all attribute ("a"), reference ("r"), state ("s"), and
+# geometry ("g") properties as well as those same report sections from all of the element's children recursively ("c").
+# In the course of ordinary usage it is unlikely that all of those properties would be needed by a client at once but
+# the option exists if desired.
+#
+# Likewise, the size of waveform reports is a direct function of the number of active oscillators within a collector's
+# scope of detection, so oscillator density should be of some consideration in application design.
 
 #
 # Congratulations, you've completed the first Taranos:CSF tutorial!
