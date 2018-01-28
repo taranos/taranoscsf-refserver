@@ -1,6 +1,6 @@
 //
 // Taranos Cloud Sonification Framework: Reference Server
-// Copyright (C) 2017 David Hinson, Netrogen Blue LLC (dhinson@netrogenblue.com)
+// Copyright (C) 2018 David Hinson, Netrogen Blue LLC (dhinson@netrogenblue.com)
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -114,8 +114,7 @@ object ServiceAdapter
                 if (response.nonEmpty)
                 {
                     val json = Json.parse(response)
-                    // Note: ACCESS_CONTROL_ALLOW_ORIGIN required by CORS (e.g. Swagger Editor):
-                    play.api.mvc.Results.Ok(json).withHeaders(ACCESS_CONTROL_ALLOW_ORIGIN -> "*")
+                    play.api.mvc.Results.Ok(json)
                 }
                 else
                     play.api.mvc.Results.GatewayTimeout("")

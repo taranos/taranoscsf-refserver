@@ -1,6 +1,6 @@
 #
 # Taranos Cloud Sonification Framework Tutorial #1:  Switched-On Taranos
-# Copyright 2017 David Hinson, Netrogen Blue LLC (dhinson@netrogenblue.com)
+# Copyright (C) 2018 David Hinson, Netrogen Blue LLC (dhinson@netrogenblue.com)
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.

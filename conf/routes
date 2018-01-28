@@ -1,6 +1,6 @@
 #
 # Taranos Cloud Sonification Framework: Reference Server
-# Copyright (C) 2017 David Hinson, Netrogen Blue LLC (dhinson@netrogenblue.com)
+# Copyright (C) 2018 David Hinson, Netrogen Blue LLC (dhinson@netrogenblue.com)
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -107,12 +107,12 @@ PUT            /trp/f/:fieldKey/po/m                            controllers.org.
 #DELETE         /trp/f/:fieldKey/po                              controllers.org.taranos.cc.api.rendering.Controller.DestroyProbeOscillators(fieldKey)
 
 # Probe collectors
-GET            /trp/f/:fieldKey/pc/:alias                       controllers.org.taranos.cc.api.rendering.Controller.LookupProbeCollector(fieldKey, alias)
 GET            /trp/f/:fieldKey/pc                              controllers.org.taranos.cc.api.rendering.Controller.ReportProbeCollectors(fieldKey)
 GET            /trp/f/:fieldKey/p/:probeKey/pc                  controllers.org.taranos.cc.api.rendering.Controller.ReportCollectorsOfProbe(fieldKey, probeKey)
 PUT            /trp/f/:fieldKey/pc                              controllers.org.taranos.cc.api.rendering.Controller.UpdateProbeCollectors(fieldKey)
 POST           /trp/f/:fieldKey/p/:probeKey/pc                  controllers.org.taranos.cc.api.rendering.Controller.CreateProbeCollectors(fieldKey, probeKey)
 DELETE         /trp/f/:fieldKey/pc                              controllers.org.taranos.cc.api.rendering.Controller.DestroyProbeCollectors(fieldKey)
+GET            /trp/f/:fieldKey/pca/:probeCollectorAlias        controllers.org.taranos.cc.api.rendering.Controller.LookupProbeCollector(fieldKey, probeCollectorAlias)
 
 # Waveforms
 #GET            /trp/f/:fieldKey/p/:probeKey/w                   controllers.org.taranos.cc.api.rendering.Controller.ReportWaveformsAtProbe(fieldKey, probeKey)
@@ -181,12 +181,12 @@ POST           /tsp/t/:trunkKey/si                              controllers.org.
 DELETE         /tsp/t/:trunkKey/si                              controllers.org.taranos.cc.api.signaling.Controller.DestroySignalInterfaces(trunkKey)
 
 # Signal ports
-GET            /tsp/t/:trunkKey/sp/:alias                       controllers.org.taranos.cc.api.signaling.Controller.LookupSignalPort(trunkKey, alias)
 GET            /tsp/t/:trunkKey/sp                              controllers.org.taranos.cc.api.signaling.Controller.ReportSignalPorts(trunkKey)
 GET            /tsp/t/:trunkKey/si/:signalInterfaceKey/sp       controllers.org.taranos.cc.api.signaling.Controller.ReportSignalPortsOfInterface(trunkKey, signalInterfaceKey)
 PUT            /tsp/t/:trunkKey/sp                              controllers.org.taranos.cc.api.signaling.Controller.UpdateSignalPorts(trunkKey)
 POST           /tsp/t/:trunkKey/si/:signalInterfaceKey/sp       controllers.org.taranos.cc.api.signaling.Controller.CreateSignalPorts(trunkKey, signalInterfaceKey)
 DELETE         /tsp/t/:trunkKey/sp                              controllers.org.taranos.cc.api.signaling.Controller.DestroySignalPorts(trunkKey)
+GET            /tsp/t/:trunkKey/spa/:signalPortAlias            controllers.org.taranos.cc.api.signaling.Controller.LookupSignalPort(trunkKey, signalPortAlias)
 
 # Signal sources
 GET            /tsp/t/:trunkKey/ss                              controllers.org.taranos.cc.api.signaling.Controller.ReportSignalSources(trunkKey)

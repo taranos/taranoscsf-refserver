@@ -1,6 +1,6 @@
 //
 // Taranos Cloud Sonification Framework: Reference Server
-// Copyright (C) 2017 David Hinson, Netrogen Blue LLC (dhinson@netrogenblue.com)
+// Copyright (C) 2018 David Hinson, Netrogen Blue LLC (dhinson@netrogenblue.com)
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -652,11 +652,11 @@ object Controller
 
     def LookupProbeCollector (
         fieldKey: String,
-        alias: String) = play.api.mvc.Action.async
+        probeCollectorAlias: String) = play.api.mvc.Action.async
     {
         request =>
         {
-            val args = api.common.Controller.ExtractGetArgs(Seq(fieldKey, alias), request)
+            val args = api.common.Controller.ExtractGetArgs(Seq(fieldKey, probeCollectorAlias), request)
             if (args.isEmpty)
                 scala.concurrent.Future(BadRequest)(scala.concurrent.ExecutionContext.Implicits.global)
             else

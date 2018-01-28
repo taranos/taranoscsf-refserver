@@ -1,6 +1,6 @@
 //
 // Taranos Cloud Sonification Framework: Reference Server
-// Copyright (C) 2017 David Hinson, Netrogen Blue LLC (dhinson@netrogenblue.com)
+// Copyright (C) 2018 David Hinson, Netrogen Blue LLC (dhinson@netrogenblue.com)
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 //
 
 name := "taranos-refserver"
-version := "0.2"
+version := "0.5"
 
 scalaVersion := "2.11.8"
 
