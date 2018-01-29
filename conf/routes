@@ -43,78 +43,85 @@ DELETE         /tmp/c                                           controllers.org.
 
 # Fields
 GET            /trp/f                                           controllers.org.taranos.cc.api.rendering.Controller.ReportFields
-PUT            /trp/f                                           controllers.org.taranos.cc.api.rendering.Controller.UpdateFields
 POST           /trp/f                                           controllers.org.taranos.cc.api.rendering.Controller.CreateFields
+PUT            /trp/f                                           controllers.org.taranos.cc.api.rendering.Controller.UpdateFields
 DELETE         /trp/f                                           controllers.org.taranos.cc.api.rendering.Controller.DestroyFields
 
 # Field emitters
 GET            /trp/f/:fieldKey/fe                              controllers.org.taranos.cc.api.rendering.Controller.ReportFieldEmitters(fieldKey)
-PUT            /trp/f/:fieldKey/fe                              controllers.org.taranos.cc.api.rendering.Controller.UpdateFieldEmitters(fieldKey)
-PUT            /trp/f/:fieldKey/fe/m                            controllers.org.taranos.cc.api.rendering.Controller.CallFieldEmitters(fieldKey)
 POST           /trp/f/:fieldKey/fe                              controllers.org.taranos.cc.api.rendering.Controller.CreateFieldEmitters(fieldKey)
+PUT            /trp/f/:fieldKey/fe                              controllers.org.taranos.cc.api.rendering.Controller.UpdateFieldEmitters(fieldKey)
 DELETE         /trp/f/:fieldKey/fe                              controllers.org.taranos.cc.api.rendering.Controller.DestroyFieldEmitters(fieldKey)
+PUT            /trp/f/:fieldKey/fe/m                            controllers.org.taranos.cc.api.rendering.Controller.CallFieldEmitters(fieldKey)
 
 # Field oscillators
 GET            /trp/f/:fieldKey/fo                              controllers.org.taranos.cc.api.rendering.Controller.ReportFieldOscillators(fieldKey)
-GET            /trp/f/:fieldKey/fe/:fieldEmitterKey/fo          controllers.org.taranos.cc.api.rendering.Controller.ReportOscillatorsOfEmitter(fieldKey, fieldEmitterKey)
 PUT            /trp/f/:fieldKey/fo                              controllers.org.taranos.cc.api.rendering.Controller.UpdateFieldOscillators(fieldKey)
-PUT            /trp/f/:fieldKey/fo/m                            controllers.org.taranos.cc.api.rendering.Controller.CallFieldOscillators(fieldKey)
-#POST           /trp/f/:fieldKey/fe/:fieldEmitterKey/fo          controllers.org.taranos.cc.api.rendering.Controller.CreateFieldOscillators(fieldKey, fieldEmitterKey)
+# Superfluous:
 #DELETE         /trp/f/:fieldKey/fo                              controllers.org.taranos.cc.api.rendering.Controller.DestroyFieldOscillators(fieldKey)
+GET            /trp/f/:fieldKey/fe/:fieldEmitterKey/fo          controllers.org.taranos.cc.api.rendering.Controller.ReportOscillatorsOfFieldEmitter(fieldKey, fieldEmitterKey)
+# Superfluous:
+#POST           /trp/f/:fieldKey/fe/:fieldEmitterKey/fo          controllers.org.taranos.cc.api.rendering.Controller.CreateFieldOscillators(fieldKey, fieldEmitterKey)
+PUT            /trp/f/:fieldKey/fo/m                            controllers.org.taranos.cc.api.rendering.Controller.CallFieldOscillators(fieldKey)
 
 # Subjects
 GET            /trp/f/:fieldKey/s                               controllers.org.taranos.cc.api.rendering.Controller.ReportSubjects(fieldKey)
-PUT            /trp/f/:fieldKey/s                               controllers.org.taranos.cc.api.rendering.Controller.UpdateSubjects(fieldKey)
 POST           /trp/f/:fieldKey/s                               controllers.org.taranos.cc.api.rendering.Controller.CreateSubjects(fieldKey)
+PUT            /trp/f/:fieldKey/s                               controllers.org.taranos.cc.api.rendering.Controller.UpdateSubjects(fieldKey)
 DELETE         /trp/f/:fieldKey/s                               controllers.org.taranos.cc.api.rendering.Controller.DestroySubjects(fieldKey)
 
 # Subject emitters
 GET            /trp/f/:fieldKey/se                              controllers.org.taranos.cc.api.rendering.Controller.ReportSubjectEmitters(fieldKey)
-GET            /trp/f/:fieldKey/s/:subjectKey/se                controllers.org.taranos.cc.api.rendering.Controller.ReportEmittersOfSubject(fieldKey, subjectKey)
 PUT            /trp/f/:fieldKey/se                              controllers.org.taranos.cc.api.rendering.Controller.UpdateSubjectEmitters(fieldKey)
-PUT            /trp/f/:fieldKey/se/m                            controllers.org.taranos.cc.api.rendering.Controller.CallSubjectEmitters(fieldKey)
-POST           /trp/f/:fieldKey/s/:subjectKey/se                controllers.org.taranos.cc.api.rendering.Controller.CreateSubjectEmitters(fieldKey, subjectKey)
 DELETE         /trp/f/:fieldKey/se                              controllers.org.taranos.cc.api.rendering.Controller.DestroySubjectEmitters(fieldKey)
+GET            /trp/f/:fieldKey/s/:subjectKey/se                controllers.org.taranos.cc.api.rendering.Controller.ReportEmittersOfSubject(fieldKey, subjectKey)
+POST           /trp/f/:fieldKey/s/:subjectKey/se                controllers.org.taranos.cc.api.rendering.Controller.CreateSubjectEmitters(fieldKey, subjectKey)
+PUT            /trp/f/:fieldKey/se/m                            controllers.org.taranos.cc.api.rendering.Controller.CallSubjectEmitters(fieldKey)
 
 # Subject oscillators
 GET            /trp/f/:fieldKey/so                              controllers.org.taranos.cc.api.rendering.Controller.ReportSubjectOscillators(fieldKey)
-GET            /trp/f/:fieldKey/se/:subjectEmitterKey/so        controllers.org.taranos.cc.api.rendering.Controller.ReportOscillatorsOfSubjectEmitter(fieldKey, subjectEmitterKey)
 PUT            /trp/f/:fieldKey/so                              controllers.org.taranos.cc.api.rendering.Controller.UpdateSubjectOscillators(fieldKey)
-PUT            /trp/f/:fieldKey/so/m                            controllers.org.taranos.cc.api.rendering.Controller.CallSubjectOscillators(fieldKey)
-#POST           /trp/f/:fieldKey/se/:subjectEmitterKey/so        controllers.org.taranos.cc.api.rendering.Controller.CreateSubjectOscillators(fieldKey, subjectEmitterKey)
+# Superfluous:
 #DELETE         /trp/f/:fieldKey/so                              controllers.org.taranos.cc.api.rendering.Controller.DestroySubjectOscillators(fieldKey)
+GET            /trp/f/:fieldKey/se/:subjectEmitterKey/so        controllers.org.taranos.cc.api.rendering.Controller.ReportOscillatorsOfSubjectEmitter(fieldKey, subjectEmitterKey)
+# Superfluous:
+#POST           /trp/f/:fieldKey/se/:subjectEmitterKey/so        controllers.org.taranos.cc.api.rendering.Controller.CreateSubjectOscillators(fieldKey, subjectEmitterKey)
+PUT            /trp/f/:fieldKey/so/m                            controllers.org.taranos.cc.api.rendering.Controller.CallSubjectOscillators(fieldKey)
 
 # Probes
 GET            /trp/f/:fieldKey/p                               controllers.org.taranos.cc.api.rendering.Controller.ReportProbes(fieldKey)
-PUT            /trp/f/:fieldKey/p                               controllers.org.taranos.cc.api.rendering.Controller.UpdateProbes(fieldKey)
 POST           /trp/f/:fieldKey/p                               controllers.org.taranos.cc.api.rendering.Controller.CreateProbes(fieldKey)
+PUT            /trp/f/:fieldKey/p                               controllers.org.taranos.cc.api.rendering.Controller.UpdateProbes(fieldKey)
 DELETE         /trp/f/:fieldKey/p                               controllers.org.taranos.cc.api.rendering.Controller.DestroyProbes(fieldKey)
 
 # Probe emitters
 GET            /trp/f/:fieldKey/pe                              controllers.org.taranos.cc.api.rendering.Controller.ReportProbeEmitters(fieldKey)
-GET            /trp/f/:fieldKey/p/:probeKey/pe                  controllers.org.taranos.cc.api.rendering.Controller.ReportEmittersOfProbe(fieldKey, probeKey)
 PUT            /trp/f/:fieldKey/pe                              controllers.org.taranos.cc.api.rendering.Controller.UpdateProbeEmitters(fieldKey)
-PUT            /trp/f/:fieldKey/pe/m                            controllers.org.taranos.cc.api.rendering.Controller.CallProbeEmitters(fieldKey)
-POST           /trp/f/:fieldKey/p/:probeKey/pe                  controllers.org.taranos.cc.api.rendering.Controller.CreateProbeEmitters(fieldKey, probeKey)
 DELETE         /trp/f/:fieldKey/pe                              controllers.org.taranos.cc.api.rendering.Controller.DestroyProbeEmitters(fieldKey)
+GET            /trp/f/:fieldKey/p/:probeKey/pe                  controllers.org.taranos.cc.api.rendering.Controller.ReportEmittersOfProbe(fieldKey, probeKey)
+POST           /trp/f/:fieldKey/p/:probeKey/pe                  controllers.org.taranos.cc.api.rendering.Controller.CreateProbeEmitters(fieldKey, probeKey)
+PUT            /trp/f/:fieldKey/pe/m                            controllers.org.taranos.cc.api.rendering.Controller.CallProbeEmitters(fieldKey)
 
 # Probe oscillators
 GET            /trp/f/:fieldKey/po                              controllers.org.taranos.cc.api.rendering.Controller.ReportProbeOscillators(fieldKey)
-GET            /trp/f/:fieldKey/pe/:probeEmitterKey/po          controllers.org.taranos.cc.api.rendering.Controller.ReportOscillatorsOfProbeEmitter(fieldKey, probeEmitterKey)
 PUT            /trp/f/:fieldKey/po                              controllers.org.taranos.cc.api.rendering.Controller.UpdateProbeOscillators(fieldKey)
-PUT            /trp/f/:fieldKey/po/m                            controllers.org.taranos.cc.api.rendering.Controller.CallProbeOscillators(fieldKey)
-#POST           /trp/f/:fieldKey/pe/:probeEmitterKey/po          controllers.org.taranos.cc.api.rendering.Controller.CreateProbeOscillators(fieldKey, probeEmitterKey)
+# Superfluous:
 #DELETE         /trp/f/:fieldKey/po                              controllers.org.taranos.cc.api.rendering.Controller.DestroyProbeOscillators(fieldKey)
+GET            /trp/f/:fieldKey/pe/:probeEmitterKey/po          controllers.org.taranos.cc.api.rendering.Controller.ReportOscillatorsOfProbeEmitter(fieldKey, probeEmitterKey)
+# Superfluous:
+#POST           /trp/f/:fieldKey/pe/:probeEmitterKey/po          controllers.org.taranos.cc.api.rendering.Controller.CreateProbeOscillators(fieldKey, probeEmitterKey)
+PUT            /trp/f/:fieldKey/po/m                            controllers.org.taranos.cc.api.rendering.Controller.CallProbeOscillators(fieldKey)
 
 # Probe collectors
 GET            /trp/f/:fieldKey/pc                              controllers.org.taranos.cc.api.rendering.Controller.ReportProbeCollectors(fieldKey)
-GET            /trp/f/:fieldKey/p/:probeKey/pc                  controllers.org.taranos.cc.api.rendering.Controller.ReportCollectorsOfProbe(fieldKey, probeKey)
 PUT            /trp/f/:fieldKey/pc                              controllers.org.taranos.cc.api.rendering.Controller.UpdateProbeCollectors(fieldKey)
-POST           /trp/f/:fieldKey/p/:probeKey/pc                  controllers.org.taranos.cc.api.rendering.Controller.CreateProbeCollectors(fieldKey, probeKey)
 DELETE         /trp/f/:fieldKey/pc                              controllers.org.taranos.cc.api.rendering.Controller.DestroyProbeCollectors(fieldKey)
+GET            /trp/f/:fieldKey/p/:probeKey/pc                  controllers.org.taranos.cc.api.rendering.Controller.ReportCollectorsOfProbe(fieldKey, probeKey)
+POST           /trp/f/:fieldKey/p/:probeKey/pc                  controllers.org.taranos.cc.api.rendering.Controller.CreateProbeCollectors(fieldKey, probeKey)
 GET            /trp/f/:fieldKey/pca/:probeCollectorAlias        controllers.org.taranos.cc.api.rendering.Controller.LookupProbeCollector(fieldKey, probeCollectorAlias)
 
 # Waveforms
+# Superfluous?:
 #GET            /trp/f/:fieldKey/p/:probeKey/w                   controllers.org.taranos.cc.api.rendering.Controller.ReportWaveformsAtProbe(fieldKey, probeKey)
 GET            /trp/f/:fieldKey/pc/:probeCollectorKey/w         controllers.org.taranos.cc.api.rendering.Controller.ReportWaveformsAtProbeCollector(fieldKey, probeCollectorKey)
 GET            /trp/f/:fieldKey/w                               controllers.org.taranos.cc.api.rendering.Controller.ReportWaveformsAtSampler(fieldKey)
@@ -125,18 +132,18 @@ GET            /trp/f/:fieldKey/w                               controllers.org.
 
 # Emitter patches
 GET            /trp/f/:fieldKey/smpe                            controllers.org.taranos.cc.api.rendering.Controller.ReportEmitterPatches(fieldKey)
+PUT            /trp/f/:fieldKey/smpe                            controllers.org.taranos.cc.api.rendering.Controller.UpdateEmitterPatches(fieldKey)
 GET            /trp/f/:fieldKey/fe/:fieldEmitterKey/smpe        controllers.org.taranos.cc.api.rendering.Controller.ReportPatchOfFieldEmitter(fieldKey, fieldEmitterKey)
 GET            /trp/f/:fieldKey/se/:subjectEmitterKey/smpe      controllers.org.taranos.cc.api.rendering.Controller.ReportPatchOfSubjectEmitter(fieldKey, subjectEmitterKey)
 GET            /trp/f/:fieldKey/pe/:probeEmitterKey/smpe        controllers.org.taranos.cc.api.rendering.Controller.ReportPatchOfProbeEmitter(fieldKey, probeEmitterKey)
-PUT            /trp/f/:fieldKey/smpe                            controllers.org.taranos.cc.api.rendering.Controller.UpdateEmitterPatches(fieldKey)
 
 # Oscillator patches
 GET            /trp/f/:fieldKey/smpo                            controllers.org.taranos.cc.api.rendering.Controller.ReportOscillatorPatches(fieldKey)
+PUT            /trp/f/:fieldKey/smpo                            controllers.org.taranos.cc.api.rendering.Controller.UpdateOscillatorPatches(fieldKey)
 GET            /trp/f/:fieldKey/smpe/:emitterPatchKey/smpo      controllers.org.taranos.cc.api.rendering.Controller.ReportOscillatorPatchesOfEmitterPatch(fieldKey, emitterPatchKey)
 GET            /trp/f/:fieldKey/fo/:fieldOscillatorKey/smpo     controllers.org.taranos.cc.api.rendering.Controller.ReportPatchOfFieldOscillator(fieldKey, fieldOscillatorKey)
 GET            /trp/f/:fieldKey/so/:subjectOscillatorKey/smpo   controllers.org.taranos.cc.api.rendering.Controller.ReportPatchOfSubjectOscillator(fieldKey, subjectOscillatorKey)
 GET            /trp/f/:fieldKey/po/:probeOscillatorKey/smpo     controllers.org.taranos.cc.api.rendering.Controller.ReportPatchOfProbeOscillator(fieldKey, probeOscillatorKey)
-PUT            /trp/f/:fieldKey/smpo                            controllers.org.taranos.cc.api.rendering.Controller.UpdateOscillatorPatches(fieldKey)
 
 # Oscillator patch envelopes
 GET            /trp/f/:fieldKey/smpo/:oscillatorPatchKey/e      controllers.org.taranos.cc.api.rendering.Controller.ReportOscillatorPatchEnvelopes(fieldKey, oscillatorPatchKey)

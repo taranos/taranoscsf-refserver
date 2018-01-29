@@ -158,7 +158,7 @@ object Controller
         }
     }
 
-    def ReportOscillatorsOfEmitter (
+    def ReportOscillatorsOfFieldEmitter (
         fieldKey: String,
         fieldEmitterKey: String) = play.api.mvc.Action.async
     {
