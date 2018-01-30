@@ -155,20 +155,20 @@ PUT            /trp/f/:fieldKey/smpo/:oscillatorPatchKey/e      controllers.org.
 
 # Signal inputs
 GET            /tsp/t/:trunkKey/smi                             controllers.org.taranos.cc.api.signaling.Controller.ReportSignalInputs(trunkKey)
-PUT            /tsp/t/:trunkKey/smi                             controllers.org.taranos.cc.api.signaling.Controller.UpdateSignalInputs(trunkKey)
 POST           /tsp/t/:trunkKey/smi                             controllers.org.taranos.cc.api.signaling.Controller.CreateSignalInputs(trunkKey)
+PUT            /tsp/t/:trunkKey/smi                             controllers.org.taranos.cc.api.signaling.Controller.UpdateSignalInputs(trunkKey)
 DELETE         /tsp/t/:trunkKey/smi                             controllers.org.taranos.cc.api.signaling.Controller.DestroySignalInputs(trunkKey)
 
 # Signal bridges
 GET            /tsp/t/:trunkKey/smb                             controllers.org.taranos.cc.api.signaling.Controller.ReportSignalBridges(trunkKey)
-PUT            /tsp/t/:trunkKey/smb                             controllers.org.taranos.cc.api.signaling.Controller.UpdateSignalBridges(trunkKey)
 POST           /tsp/t/:trunkKey/smb                             controllers.org.taranos.cc.api.signaling.Controller.CreateSignalBridges(trunkKey)
+PUT            /tsp/t/:trunkKey/smb                             controllers.org.taranos.cc.api.signaling.Controller.UpdateSignalBridges(trunkKey)
 DELETE         /tsp/t/:trunkKey/smb                             controllers.org.taranos.cc.api.signaling.Controller.DestroySignalBridges(trunkKey)
 
 # Signal outputs
 GET            /tsp/t/:trunkKey/smo                             controllers.org.taranos.cc.api.signaling.Controller.ReportSignalOutputs(trunkKey)
-PUT            /tsp/t/:trunkKey/smo                             controllers.org.taranos.cc.api.signaling.Controller.UpdateSignalOutputs(trunkKey)
 POST           /tsp/t/:trunkKey/smo                             controllers.org.taranos.cc.api.signaling.Controller.CreateSignalOutputs(trunkKey)
+PUT            /tsp/t/:trunkKey/smo                             controllers.org.taranos.cc.api.signaling.Controller.UpdateSignalOutputs(trunkKey)
 DELETE         /tsp/t/:trunkKey/smo                             controllers.org.taranos.cc.api.signaling.Controller.DestroySignalOutputs(trunkKey)
 
 #
@@ -177,44 +177,44 @@ DELETE         /tsp/t/:trunkKey/smo                             controllers.org.
 
 # Trunks
 GET            /tsp/t                                           controllers.org.taranos.cc.api.signaling.Controller.ReportTrunks
-PUT            /tsp/t                                           controllers.org.taranos.cc.api.signaling.Controller.UpdateTrunks
 POST           /tsp/t                                           controllers.org.taranos.cc.api.signaling.Controller.CreateTrunks
+PUT            /tsp/t                                           controllers.org.taranos.cc.api.signaling.Controller.UpdateTrunks
 DELETE         /tsp/t                                           controllers.org.taranos.cc.api.signaling.Controller.DestroyTrunks
 
 # Signal interfaces
 GET            /tsp/t/:trunkKey/si                              controllers.org.taranos.cc.api.signaling.Controller.ReportSignalInterfaces(trunkKey)
-PUT            /tsp/t/:trunkKey/si                              controllers.org.taranos.cc.api.signaling.Controller.UpdateSignalInterfaces(trunkKey)
 POST           /tsp/t/:trunkKey/si                              controllers.org.taranos.cc.api.signaling.Controller.CreateSignalInterfaces(trunkKey)
+PUT            /tsp/t/:trunkKey/si                              controllers.org.taranos.cc.api.signaling.Controller.UpdateSignalInterfaces(trunkKey)
 DELETE         /tsp/t/:trunkKey/si                              controllers.org.taranos.cc.api.signaling.Controller.DestroySignalInterfaces(trunkKey)
 
 # Signal ports
 GET            /tsp/t/:trunkKey/sp                              controllers.org.taranos.cc.api.signaling.Controller.ReportSignalPorts(trunkKey)
-GET            /tsp/t/:trunkKey/si/:signalInterfaceKey/sp       controllers.org.taranos.cc.api.signaling.Controller.ReportSignalPortsOfInterface(trunkKey, signalInterfaceKey)
 PUT            /tsp/t/:trunkKey/sp                              controllers.org.taranos.cc.api.signaling.Controller.UpdateSignalPorts(trunkKey)
-POST           /tsp/t/:trunkKey/si/:signalInterfaceKey/sp       controllers.org.taranos.cc.api.signaling.Controller.CreateSignalPorts(trunkKey, signalInterfaceKey)
 DELETE         /tsp/t/:trunkKey/sp                              controllers.org.taranos.cc.api.signaling.Controller.DestroySignalPorts(trunkKey)
+GET            /tsp/t/:trunkKey/si/:signalInterfaceKey/sp       controllers.org.taranos.cc.api.signaling.Controller.ReportSignalPortsOfInterface(trunkKey, signalInterfaceKey)
+POST           /tsp/t/:trunkKey/si/:signalInterfaceKey/sp       controllers.org.taranos.cc.api.signaling.Controller.CreateSignalPorts(trunkKey, signalInterfaceKey)
 GET            /tsp/t/:trunkKey/spa/:signalPortAlias            controllers.org.taranos.cc.api.signaling.Controller.LookupSignalPort(trunkKey, signalPortAlias)
 
 # Signal sources
 GET            /tsp/t/:trunkKey/ss                              controllers.org.taranos.cc.api.signaling.Controller.ReportSignalSources(trunkKey)
-PUT            /tsp/t/:trunkKey/ss                              controllers.org.taranos.cc.api.signaling.Controller.UpdateSignalSources(trunkKey)
 POST           /tsp/t/:trunkKey/ss                              controllers.org.taranos.cc.api.signaling.Controller.CreateSignalSources(trunkKey)
+PUT            /tsp/t/:trunkKey/ss                              controllers.org.taranos.cc.api.signaling.Controller.UpdateSignalSources(trunkKey)
 DELETE         /tsp/t/:trunkKey/ss                              controllers.org.taranos.cc.api.signaling.Controller.DestroySignalSources(trunkKey)
 
 # Signal sinks
 GET            /tsp/t/:trunkKey/sk                              controllers.org.taranos.cc.api.signaling.Controller.ReportSignalSinks(trunkKey)
-PUT            /tsp/t/:trunkKey/sk                              controllers.org.taranos.cc.api.signaling.Controller.UpdateSignalSinks(trunkKey)
 POST           /tsp/t/:trunkKey/sk                              controllers.org.taranos.cc.api.signaling.Controller.CreateSignalSinks(trunkKey)
+PUT            /tsp/t/:trunkKey/sk                              controllers.org.taranos.cc.api.signaling.Controller.UpdateSignalSinks(trunkKey)
 DELETE         /tsp/t/:trunkKey/sk                              controllers.org.taranos.cc.api.signaling.Controller.DestroySignalSinks(trunkKey)
 
 # Signal links
 GET            /tsp/t/:trunkKey/sl                              controllers.org.taranos.cc.api.signaling.Controller.ReportSignalLinks(trunkKey)
-PUT            /tsp/t/:trunkKey/sl                              controllers.org.taranos.cc.api.signaling.Controller.UpdateSignalLinks(trunkKey)
 POST           /tsp/t/:trunkKey/sl                              controllers.org.taranos.cc.api.signaling.Controller.CreateSignalLinks(trunkKey)
+PUT            /tsp/t/:trunkKey/sl                              controllers.org.taranos.cc.api.signaling.Controller.UpdateSignalLinks(trunkKey)
 DELETE         /tsp/t/:trunkKey/sl                              controllers.org.taranos.cc.api.signaling.Controller.DestroySignalLinks(trunkKey)
 
 # Signal taps
 GET            /tsp/t/:trunkKey/st                              controllers.org.taranos.cc.api.signaling.Controller.ReportSignalTaps(trunkKey)
-PUT            /tsp/t/:trunkKey/st                              controllers.org.taranos.cc.api.signaling.Controller.UpdateSignalTaps(trunkKey)
 POST           /tsp/t/:trunkKey/st                              controllers.org.taranos.cc.api.signaling.Controller.CreateSignalTaps(trunkKey)
+PUT            /tsp/t/:trunkKey/st                              controllers.org.taranos.cc.api.signaling.Controller.UpdateSignalTaps(trunkKey)
 DELETE         /tsp/t/:trunkKey/st                              controllers.org.taranos.cc.api.signaling.Controller.DestroySignalTaps(trunkKey)
