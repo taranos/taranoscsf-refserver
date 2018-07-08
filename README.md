@@ -1,4 +1,4 @@
-![logo](http://netrogenblue.com/taranos/taranos-logo1-p.png)
+![logo](https://s3.amazonaws.com/netrogenblue-share-1/Taranos/taranos-logo1%400%2C5x.png)
 
 # *Taranos Reference Server* #
 
