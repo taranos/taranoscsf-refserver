@@ -34,7 +34,7 @@ This will create an [_SBT Native Packager_](https://github.com/sbt/sbt-native-pa
 
 ### Next Steps ###
 
-- Explore project [code documentation](http://rawgit.com/taranos/taranoscsf-refserver/master/docs/api/index.html)
+- Explore project [code documentation](https://taranos.github.io/docs/taranoscsf-refserver/api/index.html)
 
 - Learn [_Taranos:CSF_ concepts](https://github.com/taranos/taranoscsf/wiki/Domain-Model-Concepts)
 
